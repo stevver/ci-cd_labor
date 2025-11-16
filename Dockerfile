@@ -6,7 +6,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
 
-# Tahtlik viga - vale port!
-EXPOSE 8080
+# Port parandus
+EXPOSE 5000
 
 CMD ["python", "app.py"]
