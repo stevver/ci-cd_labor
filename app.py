@@ -26,5 +26,13 @@ def products():
 def version():
     return jsonify({'version': '2.0.0', 'build': 'stable'})
 
+@app.route('/api/status')
+def status():
+    return jsonify({
+        'api': 'running',
+        'version': '2.0.0',
+        'endpoints': ['/', '/health', '/products', '/api/version', '/api/status']
+    })
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

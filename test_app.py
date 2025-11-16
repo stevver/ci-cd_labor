@@ -36,3 +36,20 @@ def test_version_endpoint(client):
     data = response.get_json()
     assert data['version'] == '2.0.0'
     assert 'build' in data
+
+def test_status_endpoint(client):
+    response = client.get('/api/status')
+    assert response.status_code == 200
+
+    data = response.get_json()
+    # Kontrolli põhiandmeid
+    assert data['api'] == 'running'
+    assert data['version'] == '2.0.0'
+
+    # Kontrolli et endpoints list on olemas ja sisaldab teatud teid
+    assert isinstance(data['endpoints'], list)
+    assert '/' in data['endpoints']
+    assert '/health' in data['endpoints']
+    assert '/products' in data['endpoints']
+    assert '/api/version' in data['endpoints']
+    assert '/api/status' in data['endpoints']
