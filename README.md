@@ -23,8 +23,8 @@ Pipeline koosneb 4 stage'ist:
 
 ## Features
 
-✅ Automaatne testimin
-✅ Docker containerizatio
+✅ Automaatne testimine
+✅ Docker containerization
 ✅ Manual production approval
 ✅ Health check
 ✅ Negatiivse hinna kontrol
